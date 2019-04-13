@@ -1,0 +1,66 @@
+{
+	"name": "stackoverflowsearch",
+	"displayName": "StackOverflowSearch",
+	"description": "Search Stack Overflow for selected text",
+	"author": {
+		"name": "Matt Martell",
+		"email": "matt@mattmartell.net",
+		"url": "https://mattmartell.net"
+	},
+	"repository": {"url": "https://github.com/om3n07/StackOverflowExtension"},
+	"license": "MIT",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"categories": [
+		"Debuggers",
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.stackOverflowSearch"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.stackOverflowSearch",
+				"title": "Search Stack Overflow 🔎"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.stackOverflowSearch",
+				"key": "ctrl+alt+f",
+				"mac": "shift+cmd+f",
+				"when": "editorHasSelection"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorHasSelection",
+					"command": "extension.stackOverflowSearch",
+					"group": "z_commands"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"opn": "^6.0.0"
+	}
+}
