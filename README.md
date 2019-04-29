@@ -1,6 +1,6 @@
 # stackoverflowsearch README
 
-Search Stack Overflow for the selected text. Works with any language!
+Search Stack Overflow for the selected text.
 
 ## Features
 
